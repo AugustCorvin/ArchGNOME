@@ -6,11 +6,11 @@ packages=(
     gnome-weather
 )
 
-for pkg in '${packages[@]}'; do
+for pkg in "${packages[@]}"; do
     if pacman -Qi '$pkg' &>/dev/null; then
         sudo pacman -Rns --noconfirm '$pkg'
-        echo '$pkg has been deleted'
+        echo "$pkg has been deleted"
     else
-        echo '$pkg not found'
+        echo "$pkg not found"
     fi
 done
